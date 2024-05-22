@@ -9,6 +9,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community import embeddings
+from langchain_together.embeddings import TogetherEmbeddings
 from langchain_community.embeddings.sentence_transformer import (
     SentenceTransformerEmbeddings,
 )
@@ -23,6 +24,9 @@ import os
 import time
 import textwrap
 from config import GROQ_API_KEY
+from config import TOGETHER_API_KEY
+
+os.environ["TOGETHER_API_KEY"] = TOGETHER_API_KEY
 
 # INGEST : chargement des docs et embedding dans base vector
 
@@ -42,7 +46,7 @@ chunks = text_splitter.split_documents(documents)
 
 vectorstore = Chroma.from_documents(
     documents=chunks,
-    embedding=SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2"),
+    embedding=TogetherEmbeddings(model="togethercomputer/m2-bert-80M-8k-retrieval"),
 )
 retriever = vectorstore.as_retriever()     
 

@@ -17,7 +17,7 @@ tasks:
       #python3 server.py
     init: |
       cd backend
-      pip install groq langchain langchain-core langchain-groq langchain-community sentence_transformers chromadb pypdf unstructured langserve sse_starlette
+      pip install groq langchain langchain-core langchain-groq langchain-together langchain-community sentence_transformers chromadb pypdf unstructured langserve sse_starlette
 
 ports:
   - port: 5000

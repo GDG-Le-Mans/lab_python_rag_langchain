@@ -25,7 +25,7 @@ $ python3 -m venv venv-llms
 $ source venv-llms/bin/activate
 
 # installation des modules python 
-$ pip install groq langchain langchain-core langchain-groq langchain-community sentence_transformers chromadb pypdf unstructured
+$ pip install groq langchain langchain-core langchain-groq langchain-together langchain-community sentence_transformers chromadb pypdf unstructured
 ```
 
 compléter les API TOKEN dans le fichier config.py
