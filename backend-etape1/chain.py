@@ -33,9 +33,3 @@ from config import GROQ_API_KEY
 # définition = de la langchain
 # chain =
 
-chat = ChatGroq(temperature=0, groq_api_key="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", model_name="mixtral-8x7b-32768")
-system = "You are a french helpful assistant."
-human = "{text}"
-prompt = ChatPromptTemplate.from_messages([("system", system), ("human", human)])
-
-chain = prompt | chat
