@@ -6,6 +6,7 @@ tasks:
     command: |
       cd frontend
       npm install
+      echo "REACT_APP_BACKEND_URL=http://${GITPOD_WORKSPACE_URL:8}:5000" > .env
       npm start
     init: |
       cd frontend

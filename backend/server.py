@@ -71,5 +71,5 @@ async def redirect_root_to_docs():
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="localhost", port=3000)
+    uvicorn.run(app, host="localhost", port=5000)
 

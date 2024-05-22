@@ -13,7 +13,7 @@ function Chatbot() {
     setInput('');
 
     // Create a new EventSource instance to receive server-sent events
-    const eventSource = new EventSource(`http://localhost:3000/stream_log?question=${encodeURIComponent(input)}`);
+    const eventSource = new EventSource(`${process.env.REACT_APP_BACKEND_URL}/stream_log?question=${encodeURIComponent(input)}`);
 
     // Listen for messages from the server
     eventSource.onmessage = (event) => {
