@@ -6,15 +6,15 @@ tasks:
     command: |
       cd frontend
       npm install
-      echo "REACT_APP_BACKEND_URL=http://${GITPOD_WORKSPACE_URL:8}:5000" > .env
-      npm start
+      echo "REACT_APP_BACKEND_URL=http://5000-${GITPOD_WORKSPACE_URL:8}" > .env
+      #npm start
     init: |
       cd frontend
       npm install
   - name: Start Backend
     command: |
       cd backend
-      python3 server.py
+      #python3 server.py
     init: |
       cd backend
       pip install groq langchain langchain-core langchain-groq langchain-community sentence_transformers chromadb pypdf unstructured langserve sse_starlette
